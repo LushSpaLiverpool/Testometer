@@ -5,6 +5,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'LushFont';
+    src: url('fonts/arial_black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* -------------------- General Page -------------------- */
 body {
@@ -100,7 +106,10 @@ h1 {
 }
 
 h2 {
-    font-family: 'ArcadeFont', monospace;
+    font-family: 'LushFont', monospace;
+    font-size: 28px;
+    margin: 0;
+    letter-spacing: 2px;
 }
 
 .arcade-text {

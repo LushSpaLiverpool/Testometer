@@ -1,0 +1,365 @@
+/* -------------------- Custom Arcade Font -------------------- */
+@font-face {
+    font-family: 'ArcadeFont';
+    src: url('fonts/lush.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -------------------- General Page -------------------- */
+body {
+    background: radial-gradient(circle, #2b0000, #000);
+    font-family: 'ArcadeFont', monospace;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+.machine {
+    width: 90%;
+    max-width: 380px;
+    padding: 20px;
+    background: #7a0000;
+    border: 6px solid #ffb3b3;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 25px #ff4d4d;
+    position: relative;
+    font-family: 'ArcadeFont', monospace;
+}
+
+/* -------------------- Arcade Lights -------------------- */
+.arcade-lights {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.arcade-lights .light {
+    width: 14px;
+    height: 14px;
+    background: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 8px yellow;
+    animation: blink 1.2s infinite alternate;
+}
+
+.arcade-lights .light:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.arcade-lights .light:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.arcade-lights .light:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.arcade-lights .light:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.arcade-lights .light:nth-child(6) {
+    animation-delay: 1s;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+}
+
+/* -------------------- Headings -------------------- */
+h1 {
+    font-family: 'ArcadeFont', monospace;
+    font-size: 28px;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-family: 'ArcadeFont', monospace;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-family: 'ArcadeFont', monospace;
+}
+
+.arcade-text {
+    font-family: 'ArcadeFont', monospace;
+}
+
+/* -------------------- Input Fields -------------------- */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 16px;
+    font-family: 'ArcadeFont', monospace;
+}
+
+/* -------------------- Questions -------------------- */
+.question {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 14px;
+    text-align: left;
+    transition: all 0.3s ease;
+    font-family: 'ArcadeFont', monospace;
+}
+
+.question-title {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 4px;
+}
+
+.question-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.option {
+    display: block;
+    padding: 12px;
+    margin: 6px 0;
+    background: #4d0000;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s, transform 0.1s;
+    font-family: 'ArcadeFont', monospace;
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+.option:hover {
+    background: #660000;
+    transform: scale(1.02);
+}
+
+/* -------------------- Buttons -------------------- */
+#navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#navigation button {
+    width: 48%;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: inset 0 -3px 0 #b30000;
+    transition: transform 0.1s;
+    font-family: 'ArcadeFont', monospace;
+}
+
+#navigation button:active {
+    transform: translateY(2px);
+}
+
+@media (max-width: 400px) {
+    #navigation {
+        flex-direction: column;
+    }
+
+    #navigation button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}
+
+/* -------------------- Strength Gauge -------------------- */
+.strength-gauge {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60px;
+    height: 300px;
+    margin: 20px auto;
+    background: #330000;
+    border: 4px solid #ff4d4d;
+    border-radius: 12px;
+    padding: 4px;
+    box-shadow: 0 0 20px #ff4d4d inset;
+    font-family: 'ArcadeFont', monospace;
+}
+
+.strength-gauge .light {
+    width: 90%;
+    height: 12%;
+    margin: 2px 0;
+    border-radius: 6px;
+    background: #111;
+    opacity: 0.2;
+    transition: background 0.3s, opacity 0.3s;
+}
+
+.light.green {
+    background: green;
+    box-shadow: 0 0 6px #0f0;
+}
+
+.light.yellow {
+    background: yellow;
+    box-shadow: 0 0 6px #ff0;
+}
+
+.light.red {
+    background: red;
+    box-shadow: 0 0 6px #f00;
+}
+
+.strength-gauge.flashing {
+    box-shadow: 0 0 25px #ff4d4d inset, 0 0 25px #ff4d4d, 0 0 50px #ff6666;
+    animation: flashLights 0.2s infinite alternate;
+}
+
+@keyframes flashLights {
+    0% {
+        box-shadow: 0 0 25px #ff4d4d inset, 0 0 25px #ff4d4d, 0 0 50px #ff6666;
+    }
+
+    50% {
+        box-shadow: 0 0 35px #ffff33 inset, 0 0 35px #ffff33, 0 0 70px #ffcc00;
+    }
+
+    100% {
+        box-shadow: 0 0 25px #ff4d4d inset, 0 0 25px #ff4d4d, 0 0 50px #ff6666;
+    }
+}
+
+.strength-gauge.shaking {
+    animation: gaugeShake 0.2s ease;
+}
+
+@keyframes gaugeShake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-3px);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes lightJitter {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateX(-2px) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateX(2px) rotate(2deg);
+    }
+
+    75% {
+        transform: translateX(-1px) rotate(-1deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+/* -------------------- Confetti -------------------- */
+#confettiContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: red;
+    opacity: 0.9;
+    transform: rotate(0deg);
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* -------------------- Misc -------------------- */
+.result {
+    font-size: 18px;
+    margin-top: 12px;
+    min-height: 40px;
+}
+
+.why {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 10px;
+    padding-left: 18px;
+}
+
+.why li {
+    margin-bottom: 6px;
+}
+
+.disclaimer {
+    font-size: 11px;
+    opacity: 0.7;
+    margin-top: 10px;
+}

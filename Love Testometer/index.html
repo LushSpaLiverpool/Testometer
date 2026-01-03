@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Love Testometer</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <!-- Confetti container -->
+    <div id="confettiContainer"></div>
+
+    <div class="machine" id="machine">
+
+        <!-- Blinking arcade lights -->
+        <div class="arcade-lights" id="arcadeLights">
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+        </div>
+
+        <h1>LOVE<br>TESTOMETER</h1>
+        <p class="subtitle">First Date Compatibility Test 💘</p>
+
+        <input type="text" id="userName" placeholder="Your Name">
+
+        <div id="questions"></div>
+
+        <div id="navigation">
+            <button id="nextButton">NEXT ➡️</button>
+            <button id="testButton" style="display:none;">TEST MATCH</button>
+        </div>
+
+        <!-- Results container -->
+        <div id="resultsContainer" style="display:none;">
+            <div class="strength-gauge" id="strengthGauge">
+                <!-- Lights dynamically generated -->
+            </div>
+
+            <div class="product">
+                <p class="arcade-text">Your date is:</p>
+                <h2 id="productName" class="arcade-text"></h2>
+            </div>
+
+            <div class="result arcade-text" id="resultText"></div>
+            <ul class="why arcade-text" id="whyList"></ul>
+        </div>
+
+        <p class="disclaimer arcade-text">For fun only 💕</p>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

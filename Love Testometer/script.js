@@ -36,7 +36,7 @@ CONFIG.questions.forEach((q, qIndex) => {
 // Navigation buttons
 nextButton.addEventListener("click", () => {
     const selected = document.querySelector(`.question[data-index="${currentQuestion}"] input[type="radio"]:checked`);
-    if (!selected) { alert("Please select an answer 💕"); return; }
+    if (!selected) { alert("Please select an answer"); return; }
 
     document.querySelector(`.question[data-index="${currentQuestion}"]`).style.display = "none";
     currentQuestion++;

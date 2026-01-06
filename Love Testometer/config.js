@@ -1,5 +1,5 @@
 const CONFIG = {
-    productName: "Tisty Tosty",
+    productName: "Twilight",
 
     questions: [
         {
